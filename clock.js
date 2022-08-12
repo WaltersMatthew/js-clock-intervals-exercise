@@ -1,9 +1,7 @@
 let hour = document.querySelector('#hour')
 let minute = document.querySelector('#minute')
 let second = document.querySelector('#second')
-
-// let degrees = 45;
-// hour.style.transform = "rotate(" + degrees + "deg)"
+let date = document.querySelector('#date')
 
 function secondRotation(s){
     return s * 360/60
@@ -24,21 +22,20 @@ function secondRotate() {
     secondCount++
     let secondTurnDegree = secondRotation(secondCount)
     second.style.transform = "rotate(" + secondTurnDegree + "deg)"
+    minRotate()
+    hourRotate()
 }
-setInterval(secondRotate, 10)
 
 function minRotate(){
-    minCount = secondCount/60
     let minTurnDegree = minuteRotation(minCount)
     minute.style.transform = "rotate(" + minTurnDegree + "deg)" 
 }
- setInterval(minRotate, 600)
 
 function hourRotate(){
-    hourCount = minCount/60
     let hourTurnDegree = hourRotation(hourCount)
     hour.style.transform = "rotate(" + hourTurnDegree + "deg)"
 }
-setInterval(hourRotate, 1200)
 
+setInterval(secondRotate, 1000)
 
+date.innerText = Date()

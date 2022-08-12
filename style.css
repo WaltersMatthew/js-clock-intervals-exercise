@@ -17,3 +17,8 @@
 #second {
     
 }
+#date {
+    position: absolute;
+    transform: translate(30%,3100%);
+    text-align: center;
+}
